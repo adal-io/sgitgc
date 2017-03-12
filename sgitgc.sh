@@ -8,7 +8,7 @@ gitgc() {
 loop() {
   echo "Starting sgitgc";
   # for each directory in current directory excluding git
-  for D in `find . -mindepth 1 -maxdepth 1  -type d -not -path ./.git`
+  for D in `find . -mindepth 1 -maxdepth 2  -type d -not -path ./.git`
   do
       # Go to directory
       cd $D;
