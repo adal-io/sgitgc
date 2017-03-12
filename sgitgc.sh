@@ -8,14 +8,14 @@ gitgc() {
 loop() {
   echo "Starting sgitgc";
   # for each directory in current directory excluding git
-  for D in `find . -mindepth 1 -maxdepth 2  -type d -not -path ./.git`
+  for D in `find . -mindepth 2 -maxdepth 2  -type d -not -path ./.git`
   do
       # Go to directory
       cd $D;
       # run gitgc function
       gitgc $D;
       # go back to parent directory
-      cd ..;
+      cd ../..;
   done;
   echo "sgitgc complete";
 }
